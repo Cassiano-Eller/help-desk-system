@@ -1,0 +1,7 @@
+# IntelliJ e compilação
+.idea/
+*.iml
+out/
+*.class
+
+docs/
