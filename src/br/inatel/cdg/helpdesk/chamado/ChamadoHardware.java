@@ -12,14 +12,16 @@ public class ChamadoHardware extends Chamado {
 
     public ChamadoHardware(String titulo, String descricao, Cliente cliente, String equipamento) {
         super(titulo, descricao, cliente);
-        // TODO (Integrante 2): guardar o equipamento
+        // TODO (Integrante 2): guardar o equipamento - Feito!
+        this.equipamento = equipamento;
     }
 
     public ChamadoHardware(int idChamado, String titulo, String descricao, StatusChamado status,
                            LocalDateTime dataAbertura, Cliente cliente, Atendente atendente,
                            String equipamento) {
         super(idChamado, titulo, descricao, status, dataAbertura, cliente, atendente);
-        // TODO (Integrante 2): guardar o equipamento
+        // TODO (Integrante 2): guardar o equipamento - Feito!
+        this.equipamento = equipamento;
     }
 
     @Override
