@@ -21,13 +21,29 @@ public abstract class Chamado implements Comparable<Chamado> {
 
     // Construtor usado ao abrir um chamado novo
     public Chamado(String titulo, String descricao, Cliente cliente) {
-        // TODO (Integrante 2): idChamado = proximoId++; status = ABERTO; dataAbertura = LocalDateTime.now();
+        // TODO (Integrante 2): idChamado = proximoId++; status = ABERTO; dataAbertura = LocalDateTime.now(); ok!
+        this.idChamado = proximoId++;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.status = StatusChamado.ABERTO;
+        this.dataAbertura = LocalDateTime.now();
+        this.cliente = cliente;
+        this.atendente = null;
     }
 
     // Construtor usado ao carregar do arquivo
     public Chamado(int idChamado, String titulo, String descricao, StatusChamado status,
                    LocalDateTime dataAbertura, Cliente cliente, Atendente atendente) {
-        // TODO (Integrante 2): guardar tudo e fazer proximoId = Math.max(proximoId, idChamado + 1);
+        // TODO (Integrante 2): guardar tudo e fazer proximoId = Math.max(proximoId, idChamado + 1); ok!
+        this.idChamado = idChamado;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.status = status;
+        this.dataAbertura = dataAbertura;
+        this.cliente = cliente;
+        this.atendente = atendente;
+    
+        proximoId = Math.max(proximoId, idChamado + 1);
     }
 
     public void abrirChamado() {
