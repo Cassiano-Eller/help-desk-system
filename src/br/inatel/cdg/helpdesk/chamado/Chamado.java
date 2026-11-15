@@ -95,8 +95,15 @@ public abstract class Chamado implements Comparable<Chamado> {
     // Formato: id;categoria;titulo;descricao;status;dataAbertura;idCliente;idAtendente
     // (idAtendente vazio quando não tem atendente; as subclasses acrescentam os seus campos)
     public String paraLinhaCsv() {
-        // TODO (Integrante 2)
-        return "";
+        // TODO (Integrante 2) - Feito !
+        return idChamado + ";" +
+           getCategoria() + ";" +
+           titulo + ";" +
+           descricao + ";" +
+           status + ";" +
+           dataAbertura + ";" +
+           cliente.getId() + ";" +
+           (atendente != null ? atendente.getId() : "");
     }
 
     @Override
