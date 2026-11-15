@@ -25,7 +25,7 @@ public class ChamadoRede extends Chamado {
     @Override
     public int calcularPrazoHoras() {
         // TODO (Integrante 2)
-        return 24;
+        return 4;
     }
 
     @Override
