@@ -39,8 +39,8 @@ public class ChamadoHardware extends Chamado {
     // ...;equipamento
     @Override
     public String paraLinhaCsv() {
-        // TODO (Integrante 2): super.paraLinhaCsv() + ";" + equipamento
-        return "";
+        // TODO (Integrante 2): super.paraLinhaCsv() + ";" + equipamento - Feito!
+        return super.paraLinhaCsv() + ";" + equipamento;
     }
 
     @Override
