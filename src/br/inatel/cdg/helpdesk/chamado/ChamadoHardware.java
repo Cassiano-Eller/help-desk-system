@@ -46,5 +46,7 @@ public class ChamadoHardware extends Chamado {
     @Override
     public void mostraInfo() {
         // TODO (Integrante 2)
+        super.mostraInfo();
+        System.out.println("Equipamento: " + equipamento);
     }
 }
