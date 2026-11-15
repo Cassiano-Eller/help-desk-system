@@ -47,20 +47,38 @@ public abstract class Chamado implements Comparable<Chamado> {
     }
 
     public void abrirChamado() {
-        // TODO (Integrante 2): imprimir e cliente.enviarNotificacao("Chamado #" + idChamado + " aberto");
+        // TODO (Integrante 2): imprimir e cliente.enviarNotificacao("Chamado #" + idChamado + " aberto"); - Feito!
+        System.out.println("Chamado #" + idChamado + " aberto.");
     }
 
     public void atribuirAtendente(Atendente atendente) throws StatusInvalidoException {
-        // TODO (Integrante 2): alterarStatus(EM_ATENDIMENTO), guardar o atendente e notificar os dois
+        // TODO (Integrante 2): alterarStatus(EM_ATENDIMENTO), guardar o atendente e notificar os dois - Feito!
+        alterarStatus(StatusChamado.EM_ATENDIMENTO);
+        this.atendente = atendente;
     }
 
     public void fecharChamado() throws StatusInvalidoException {
-        // TODO (Integrante 2): alterarStatus(FECHADO) e notificar o cliente
+        // TODO (Integrante 2): alterarStatus(FECHADO) e notificar o cliente - Feito!
+        alterarStatus(StatusChamado.FECHADO);
     }
 
     // Valida a transição: ABERTO -> EM_ATENDIMENTO -> FECHADO. Qualquer outra lança a exceção
     protected void alterarStatus(StatusChamado novoStatus) throws StatusInvalidoException {
-        // TODO (Integrante 2)
+        // TODO (Integrante 2) - Feito!
+        if (status == StatusChamado.ABERTO &&
+            novoStatus == StatusChamado.EM_ATENDIMENTO) {
+            status = novoStatus;
+        return;
+        }
+        
+        if (status == StatusChamado.EM_ATENDIMENTO &&
+        novoStatus == StatusChamado.FECHADO) {
+        status = novoStatus;
+        return;
+        }
+
+        throw new StatusInvalidoException(
+        "Transição inválida de " + status + " para " + novoStatus);
     }
 
     public boolean estaAtrasado(LocalDateTime agora) {
