@@ -21,7 +21,7 @@ public abstract class Chamado implements Comparable<Chamado> {
 
     // Construtor usado ao abrir um chamado novo
     public Chamado(String titulo, String descricao, Cliente cliente) {
-        // TODO (Integrante 2): idChamado = proximoId++; status = ABERTO; dataAbertura = LocalDateTime.now(); ok!
+        // TODO (Integrante 2): idChamado = proximoId++; status = ABERTO; dataAbertura = LocalDateTime.now(); Feito!!
         this.idChamado = proximoId++;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -34,7 +34,7 @@ public abstract class Chamado implements Comparable<Chamado> {
     // Construtor usado ao carregar do arquivo
     public Chamado(int idChamado, String titulo, String descricao, StatusChamado status,
                    LocalDateTime dataAbertura, Cliente cliente, Atendente atendente) {
-        // TODO (Integrante 2): guardar tudo e fazer proximoId = Math.max(proximoId, idChamado + 1); ok!
+        // TODO (Integrante 2): guardar tudo e fazer proximoId = Math.max(proximoId, idChamado + 1); Feito!!
         this.idChamado = idChamado;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -64,8 +64,9 @@ public abstract class Chamado implements Comparable<Chamado> {
     }
 
     public boolean estaAtrasado(LocalDateTime agora) {
-        // TODO (Integrante 2): status != FECHADO && agora.isAfter(dataAbertura.plusHours(calcularPrazoHoras()))
-        return false;
+        // TODO (Integrante 2): status != FECHADO && agora.isAfter(dataAbertura.plusHours(calcularPrazoHoras())) - Feito!
+        return status != StatusChamado.FECHADO &&
+        agora.isAfter(dataAbertura.plusHours(calcularPrazoHoras()));
     }
 
     public abstract int calcularPrazoHoras();
@@ -82,7 +83,7 @@ public abstract class Chamado implements Comparable<Chamado> {
 
     @Override
     public int compareTo(Chamado outro) {
-        // TODO (Integrante 2): Integer.compare(this.calcularPrazoHoras(), outro.calcularPrazoHoras()) - ok!
+        // TODO (Integrante 2): Integer.compare(this.calcularPrazoHoras(), outro.calcularPrazoHoras()) - Feito!!
         return Integer.compare(
             this.calcularPrazoHoras(),
             outro.calcularPrazoHoras());
