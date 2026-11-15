@@ -82,8 +82,10 @@ public abstract class Chamado implements Comparable<Chamado> {
 
     @Override
     public int compareTo(Chamado outro) {
-        // TODO (Integrante 2): Integer.compare(this.calcularPrazoHoras(), outro.calcularPrazoHoras())
-        return 0;
+        // TODO (Integrante 2): Integer.compare(this.calcularPrazoHoras(), outro.calcularPrazoHoras()) - ok!
+        return Integer.compare(
+            this.calcularPrazoHoras(),
+            outro.calcularPrazoHoras());
     }
 
     public void mostraInfo() {
