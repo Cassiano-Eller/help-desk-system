@@ -24,14 +24,14 @@ public class ChamadoHardware extends Chamado {
 
     @Override
     public int calcularPrazoHoras() {
-        // TODO (Integrante 2)
-        return 0;
+        // TODO (Integrante 2) - Feito! 
+        return 48;
     }
 
     @Override
     public String getCategoria() {
-        // TODO (Integrante 2)
-        return "";
+        // TODO (Integrante 2) Feito!
+        return "Hardware";
     }
 
     // ...;equipamento
