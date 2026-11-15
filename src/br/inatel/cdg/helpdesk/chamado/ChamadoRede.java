@@ -25,13 +25,13 @@ public class ChamadoRede extends Chamado {
     @Override
     public int calcularPrazoHoras() {
         // TODO (Integrante 2)
-        return 0;
+        return 24;
     }
 
     @Override
     public String getCategoria() {
         // TODO (Integrante 2)
-        return "";
+        return "Rede";
     }
 
     // ...;enderecoIp
