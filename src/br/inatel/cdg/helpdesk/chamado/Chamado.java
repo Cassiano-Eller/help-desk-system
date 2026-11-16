@@ -48,18 +48,24 @@ public abstract class Chamado implements Comparable<Chamado> {
 
     public void abrirChamado() {
         // TODO (Integrante 2): imprimir e cliente.enviarNotificacao("Chamado #" + idChamado + " aberto"); - Feito!
-        System.out.println("Chamado #" + idChamado + " aberto.");
+        String mensagem = "Chamado #" + idChamado + " aberto.";
+        System.out.println(mensagem);
+        cliente.enviarNotificacao(mensagem);
     }
 
     public void atribuirAtendente(Atendente atendente) throws StatusInvalidoException {
         // TODO (Integrante 2): alterarStatus(EM_ATENDIMENTO), guardar o atendente e notificar os dois - Feito!
         alterarStatus(StatusChamado.EM_ATENDIMENTO);
         this.atendente = atendente;
+    
+        cliente.enviarNotificacao("Chamado #" + idChamado + " está em atendimento.");
+        atendente.enviarNotificacao("Chamado #" + idChamado + " foi atribuído a você.");
     }
 
     public void fecharChamado() throws StatusInvalidoException {
         // TODO (Integrante 2): alterarStatus(FECHADO) e notificar o cliente - Feito!
         alterarStatus(StatusChamado.FECHADO);
+        cliente.enviarNotificacao("Chamado #" + idChamado + " foi fechado.");
     }
 
     // Valida a transição: ABERTO -> EM_ATENDIMENTO -> FECHADO. Qualquer outra lança a exceção
@@ -115,7 +121,16 @@ public abstract class Chamado implements Comparable<Chamado> {
     }
 
     public void mostraInfo() {
-        // TODO (Integrante 2): imprimir os atributos
+        // TODO (Integrante 2): imprimir os atributos - Feito!!
+        System.out.println("ID: " + idChamado);
+        System.out.println("Categoria: " + getCategoria());
+        System.out.println("Título: " + titulo);
+        System.out.println("Descrição: " + descricao);
+        System.out.println("Status: " + status);
+        System.out.println("Data de abertura: " + dataAbertura);
+        System.out.println("Cliente ID: " + cliente.getId());
+        System.out.println("Atendente ID: " + (atendente != null ? atendente.getId() : "Não atribuído"));
+        System.out.println("Prazo: " + calcularPrazoHoras() + " horas");
     }
 
     public int getIdChamado() {
