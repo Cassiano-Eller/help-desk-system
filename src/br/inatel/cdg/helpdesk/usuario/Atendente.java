@@ -5,16 +5,14 @@ public class Atendente extends Pessoa implements Notificavel {
 
     private String especialidade; // "Hardware", "Software" ou "Rede"
 
-    // Cadastro
     public Atendente(String nome, String email, String especialidade) {
         super(nome, email);
-        // TODO (Integrante 1): guardar a especialidade
+        this.especialidade = especialidade;
     }
 
-    // Carregar do arquivo
     public Atendente(int id, String nome, String email, String especialidade) {
         super(id, nome, email);
-        // TODO (Integrante 1): guardar a especialidade
+        this.especialidade = especialidade;
     }
 
     public String getEspecialidade() {
@@ -23,24 +21,22 @@ public class Atendente extends Pessoa implements Notificavel {
 
     @Override
     public String getTipo() {
-        // TODO (Integrante 1)
-        return "";
+        return "Atendente";
     }
 
     @Override
     public void enviarNotificacao(String mensagem) {
-        // TODO (Integrante 1): System.out.println("[Painel do atendente " + nome + "] " + mensagem);
+        System.out.println("[Painel do atendente " + nome + "] " + mensagem);
     }
 
-    // Formato: id;nome;email;especialidade
     @Override
     public String paraLinhaCsv() {
-        // TODO (Integrante 1)
-        return "";
+        return super.paraLinhaCsv() + ";" + especialidade;
     }
 
     @Override
     public void mostraInfo() {
-        // TODO (Integrante 1)
+        super.mostraInfo();
+        System.out.println("    Especialidade: " + especialidade);
     }
 }

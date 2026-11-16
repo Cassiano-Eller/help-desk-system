@@ -8,13 +8,13 @@ public class Cliente extends Pessoa implements Notificavel {
     // Cadastro
     public Cliente(String nome, String email, String setor) {
         super(nome, email);
-        // TODO (Integrante 1): guardar o setor
+        this.setor = setor;
     }
 
     // Carregar do arquivo
     public Cliente(int id, String nome, String email, String setor) {
         super(id, nome, email);
-        // TODO (Integrante 1): guardar o setor
+        this.setor = setor;
     }
 
     public String getSetor() {
@@ -23,24 +23,23 @@ public class Cliente extends Pessoa implements Notificavel {
 
     @Override
     public String getTipo() {
-        // TODO (Integrante 1)
-        return "";
+        return "Cliente";
     }
 
     @Override
     public void enviarNotificacao(String mensagem) {
-        // TODO (Integrante 1): System.out.println("[E-mail para " + email + "] " + mensagem);
+        System.out.println("[E-mail para " + email + "] " + mensagem);
     }
 
     // Formato: id;nome;email;setor
     @Override
     public String paraLinhaCsv() {
-        // TODO (Integrante 1): super.paraLinhaCsv() + ";" + setor
-        return "";
+        return super.paraLinhaCsv() + ";" + setor;
     }
 
     @Override
     public void mostraInfo() {
-        // TODO (Integrante 1): super.mostraInfo() e imprimir o setor
+        super.mostraInfo();
+        System.out.println("    Setor: " + setor);
     }
 }
