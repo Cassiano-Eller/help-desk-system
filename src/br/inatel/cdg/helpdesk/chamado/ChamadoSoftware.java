@@ -1,0 +1,50 @@
+package br.inatel.cdg.helpdesk.chamado;
+
+import br.inatel.cdg.helpdesk.usuario.Atendente;
+import br.inatel.cdg.helpdesk.usuario.Cliente;
+
+import java.time.LocalDateTime;
+
+// Integrante 2
+public class ChamadoSoftware extends Chamado {
+
+    private String sistema;
+    private String versao;
+
+    public ChamadoSoftware(String titulo, String descricao, Cliente cliente, String sistema, String versao) {
+        super(titulo, descricao, cliente);
+        this.sistema = sistema;
+        this.versao = versao;
+    }
+
+    public ChamadoSoftware(int idChamado, String titulo, String descricao, StatusChamado status,
+                           LocalDateTime dataAbertura, Cliente cliente, Atendente atendente,
+                           String sistema, String versao) {
+        super(idChamado, titulo, descricao, status, dataAbertura, cliente, atendente);
+        this.sistema = sistema;
+        this.versao = versao;
+    }
+
+    @Override
+    public int calcularPrazoHoras() {
+        return 24;
+    }
+
+    @Override
+    public String getCategoria() {
+        return "Software";
+    }
+
+    // ...;sistema;versao
+    @Override
+    public String paraLinhaCsv() {
+        return super.paraLinhaCsv() + ";" + sistema + ";" + versao;
+    }
+
+    @Override
+    public void mostraInfo() {
+        super.mostraInfo();
+        System.out.println("Sistema: " + sistema);
+        System.out.println("Versão: " + versao);
+    }
+}
