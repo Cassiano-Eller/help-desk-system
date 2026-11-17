@@ -9,14 +9,17 @@ public abstract class Pessoa {
     protected String nome;
     protected String email;
 
-    // Construtor usado no cadastro (gera o id)
     public Pessoa(String nome, String email) {
-        // TODO (Integrante 1): this.id = proximoId++; e guardar nome e email
+        this.id = proximoId++;
+        this.nome = nome;
+        this.email = email;
     }
 
-    // Construtor usado ao carregar do arquivo (o id já existe)
     public Pessoa(int id, String nome, String email) {
-        // TODO (Integrante 1): guardar os atributos e fazer proximoId = Math.max(proximoId, id + 1);
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        proximoId = Math.max(proximoId, id + 1);
     }
 
     public int getId() {
@@ -31,16 +34,13 @@ public abstract class Pessoa {
         return email;
     }
 
-    // "Cliente" ou "Atendente"
     public abstract String getTipo();
 
-    // Formato: id;nome;email (as subclasses acrescentam o próprio campo)
     public String paraLinhaCsv() {
-        // TODO (Integrante 1)
-        return "";
+        return id + ";" + nome + ";" + email;
     }
 
     public void mostraInfo() {
-        // TODO (Integrante 1): imprimir os atributos
+        System.out.println("[" + getTipo() + " #" + id + "] " + nome + " | " + email);
     }
 }
