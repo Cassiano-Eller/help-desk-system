@@ -1,3 +1,3 @@
 1;Rede;Sem internet no setor;Nenhum computador do Financeiro acessa a internet;ABERTO;2026-11-10T08:30;1;;192.168.10.25
 2;Software;Erro ao emitir nota;O sistema fecha ao gerar a nota fiscal;FECHADO;2026-11-12T10:00;2;4;ERP Vendas;3.2.1
-3;Hardware;Monitor piscando;O monitor da mesa 5 pisca a cada poucos minutos;EM_ATENDIMENTO;2026-11-17T14:00;2;3;Monitor Dell 24
+3;Hardware;Monitor piscando;O monitor da mesa 5 pisca a cada poucos minutos;EM_ATENDIMENTO;2026-11-13T14:00;2;5;Monitor Dell 24
