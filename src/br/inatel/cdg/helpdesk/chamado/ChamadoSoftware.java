@@ -13,7 +13,6 @@ public class ChamadoSoftware extends Chamado {
 
     public ChamadoSoftware(String titulo, String descricao, Cliente cliente, String sistema, String versao) {
         super(titulo, descricao, cliente);
-        // TODO (Integrante 2): guardar sistema e versao - Feito!
         this.sistema = sistema;
         this.versao = versao;
     }
@@ -22,33 +21,28 @@ public class ChamadoSoftware extends Chamado {
                            LocalDateTime dataAbertura, Cliente cliente, Atendente atendente,
                            String sistema, String versao) {
         super(idChamado, titulo, descricao, status, dataAbertura, cliente, atendente);
-        // TODO (Integrante 2): guardar sistema e versao - Feito!
         this.sistema = sistema;
         this.versao = versao;
     }
 
     @Override
     public int calcularPrazoHoras() {
-        // TODO (Integrante 2) - Feito!
         return 24;
     }
 
     @Override
     public String getCategoria() {
-        // TODO (Integrante 2) - Feito!
         return "Software";
     }
 
     // ...;sistema;versao
     @Override
     public String paraLinhaCsv() {
-        // TODO (Integrante 2) - Feito!
         return super.paraLinhaCsv() + ";" + sistema + ";" + versao;
     }
 
     @Override
     public void mostraInfo() {
-        // TODO (Integrante 2) - Feito!
         super.mostraInfo();
         System.out.println("Sistema: " + sistema);
         System.out.println("Versão: " + versao);

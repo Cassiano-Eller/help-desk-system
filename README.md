@@ -43,3 +43,11 @@
 **Requisitos:** tratamento de erros, arquivos, threads, classes, GitHub e parte do UML.
 
 **Precisa saber explicar:** exceções, arquivos, threads, implementação no GitHub e integração do sistema.
+
+---
+
+## Diagrama UML
+
+![Diagrama de classes](docs/uml.png)
+
+A explicação do diagrama está em [docs/UML.md](docs/UML.md).

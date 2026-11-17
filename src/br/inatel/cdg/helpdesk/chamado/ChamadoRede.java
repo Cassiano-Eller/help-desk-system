@@ -12,7 +12,6 @@ public class ChamadoRede extends Chamado {
 
     public ChamadoRede(String titulo, String descricao, Cliente cliente, String enderecoIp) {
         super(titulo, descricao, cliente);
-        // TODO (Integrante 2): guardar o enderecoIp - Feito!
         this.enderecoIp = enderecoIp;
     }
 
@@ -20,32 +19,27 @@ public class ChamadoRede extends Chamado {
                        LocalDateTime dataAbertura, Cliente cliente, Atendente atendente,
                        String enderecoIp) {
         super(idChamado, titulo, descricao, status, dataAbertura, cliente, atendente);
-        // TODO (Integrante 2): guardar o enderecoIp - Feito!
         this.enderecoIp = enderecoIp;
     }
 
     @Override
     public int calcularPrazoHoras() {
-        // TODO (Integrante 2) - Feito!
         return 4;
     }
 
     @Override
     public String getCategoria() {
-        // TODO (Integrante 2) - Feito!
         return "Rede";
     }
 
     // ...;enderecoIp
     @Override
     public String paraLinhaCsv() {
-        // TODO (Integrante 2) - Feito!
         return super.paraLinhaCsv() + ";" + enderecoIp;
     }
 
     @Override
     public void mostraInfo() {
-        // TODO (Integrante 2) - Feito!
         super.mostraInfo();
         System.out.println("Endereço IP: " + enderecoIp);
     }
